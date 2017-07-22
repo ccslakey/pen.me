@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-6 offset-sm-3">
+    <h1 class="my-4 mx-auto text-center">Eligible Pen Pals</h1>
+  </div>
+</div>
+
+
+<% @users.each do |user| %>
+  <%= link_to pen_profile_path user do %>
+    <div>
+      <%= image_tag avatar_url(user) %>
+      <%= "#{user.first_name} #{user.last_name[0].capitalize}." %>
+    </div>
+  <% end %>
+<% end %>
